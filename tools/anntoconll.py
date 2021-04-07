@@ -297,10 +297,10 @@ def get_annotations(fn):
     global options
 
     annfn = path.splitext(fn)[0] + options.annsuffix
-
-    with open(annfn, 'rU') as f:
-        textbounds = parse_textbounds(f)
-
+    textbounds = []
+    if path.exists(annfn):
+        with open(annfn, 'rU') as f:
+            textbounds = parse_textbounds(f)
     textbounds = eliminate_overlaps(textbounds)
 
     return textbounds
