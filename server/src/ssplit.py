@@ -16,8 +16,7 @@ from re import DOTALL, VERBOSE
 # Constants
 # Reasonably well-behaved sentence end regular expression
 SENTENCE_END_REGEX = re_compile(r'''
-        # Require a leading non-whitespace character for the sentence
-        \S
+        
         # Then, anything goes, but don't be greedy
         .*?
         # Anchor the sentence at...
